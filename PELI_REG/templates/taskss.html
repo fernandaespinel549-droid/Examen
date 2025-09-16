@@ -1,0 +1,19 @@
+{% extends 'bases.html' %}
+{% block content %}
+<h1>Mis Peliculas</h1>
+<ul>
+    {% for peliculas in tasks %}
+        <li>
+            <h2>{{ peliculas.titulo }}</h2>
+            <p>{{ peliculas.descripcion }}</p>
+            <p>{{ peliculas.genero }}</p>
+            <p>{{ peliculas.director }}</p>
+        <a href="/admin/PELI_REG/peliculas/{{ pelicula.pk }}/change/" class="btn btn-info btn-sm">Seleccionar</a>
+        <a href="/admin/PELI_REG/peliculas/{{ pelicula.pk }}/change/" class="btn btn-warning btn-sm">Editar</a>
+        <a href="/admin/PELI_REG/peliculas/{{ pelicula.pk }}/delete/" class="btn btn-danger btn-sm">Borrar</a>
+        </li>
+    {% empty %}
+        <p>No hay peliculas.</p>
+    {% endfor %}
+</ul>
+{% endblock %}
